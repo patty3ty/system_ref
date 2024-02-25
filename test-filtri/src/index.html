@@ -1,0 +1,84 @@
+<div class="container" id="appfilters">
+  <div class="row d-none">
+    <div class="col-12" >
+    <h2>Selected:</h2>
+    <ul>
+      <li>Category: <span data-bind="text: selectedFilters.category"></span></li>
+      <li>Brand: <span data-bind="text: selectedFilters.brand"></span></li>
+      <li>Type: <span data-bind="text: selectedFilters.type"></span></li>
+      <li>Collection: <span data-bind="text: selectedFilters.collection"></span></li>
+      <li>Query: <span data-bind="text: query"></span></li>
+    </ul>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>Prodotti</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+        </div>
+        <input type="search" class="form-control" placeholder="Cerca" aria-label="Cerca" aria-describedby="basic-addon1" data-bind="textInput: query" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <div data-bind="component: {name: 'product-filter', params: {value: selectedFilters.category, label: 'Categoria', dataoptions: filters.categories, id: 'category'}}"></div>
+    </div>
+    <div class="col-3">
+      <div data-bind="component: {name: 'product-filter', params: {value: selectedFilters.brand, label: 'Marca', dataoptions: filters.brands, id: 'brand'}}"></div>
+    </div>    
+    <div class="col-3">
+      <div data-bind="component: {name: 'product-filter', params: {value: selectedFilters.type, label: 'Tipologia', dataoptions: filters.types, id: 'type'}}"></div>
+    </div>
+    <div class="col-3">
+      <div data-bind="component: {name: 'product-filter', params: {value: selectedFilters.collection, label: 'Collezione', dataoptions: filters.collections, id: 'collection'}}"></div>
+    </div>
+    
+    
+    <!-- <div class="col-3">
+            <div data-bind="component: {name: 'product-filter', params: {label: 'Marca', options: filters.brands, id: 'brands'}}"></div>
+      </div>-->
+      <!--
+<div class="col-3">
+      <input type="text" class="form-control" placeholder="Categoria" list="filter-categoria" aria-label="Categoria" placeholder="Categoria" />
+      <datalist id="filter-categoria" data-bind="foreach: filters.categories">
+        <option data-bind="value: $data, text: $data"></option>
+      </datalist>
+</div>
+-->
+    
+    
+  </div>
+  <div class="row">
+    <div class="col-12 my-2 text-right">
+      <button class="btn btn-sm btn-primary" data-bind="click: resetFilters">AZZERA FILTRI</button>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <!-- ko foreach: results.data -->
+    <div class="col-3">
+      <div class="single-result mb-2">
+        <div class="image-container">
+          <img data-bind="attr: { src: image }" class="img-fluid" />
+          <div class="caption" data-bind="text: caption"></div>
+        </div>
+        <div data-bind="ifnot: isCategory()" class="info">
+          <div class="info-1" data-bind="text: brand"></div>
+          <div class="info-2" data-bind="text: (category+' | '+title)"></div>
+        </div> 
+      </div>
+    </div>
+    <!-- /ko -->
+    
+  </div>
+  
+  
+  
+</div> <!-- .container -->
