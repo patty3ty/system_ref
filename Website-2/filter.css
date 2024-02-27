@@ -1,0 +1,116 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.top-bar {
+  margin-left:450px;
+  display: flex; /* Make the top bar container a flexbox */
+}
+
+.category {
+  display: flex; /* Make each category a flexbox for vertical alignment */
+  flex-direction: column; /* Stack items within each category vertically */
+  text-align: center; /* Center text within each category */
+  margin-right:20px;
+}
+
+.child{
+  display: flex; /* Make each category a flexbox for vertical alignment */
+  gap: 12px;
+  text-align: center; /* Center text within each category */
+  margin-right:20px;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+.leftMenu {
+  flex: 1;
+}
+
+.search{
+  padding: 10px;
+  width: 200px;
+  border: 1px solid gray;
+}
+
+h1{
+  font-size: 25px;
+  color: black;
+  font-weight: 300;
+}
+
+button {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 100;
+  padding: 5px;
+  background-color: #dde2e7;
+  color: #555;
+    width: 100px;
+    height: 40px;
+    border: 2px solid rgb(255, 255, 255); /* Gray border */
+    border-radius: 50px; /* Rounded corners */
+    outline: none; /* Remove focus outline */
+}
+
+.cats,
+.genders {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cat-option.active,
+.gender-option.active {
+  background-color: rgb(242, 231, 177); /* Or any visual change */
+}
+
+.content {
+  flex: 4;
+}
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.product{
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+img{
+  width: 150px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.name{
+  font-weight: 300;
+}
+
+.cart {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 24px;
+}
+
+.cart-items {
+  margin-left: 5px;
+}
